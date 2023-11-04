@@ -11,7 +11,7 @@
 </script>
 
 
-<h1>Sign Me Up</h1>
+<h1 class="p-6">Sign Me Up</h1>
 <p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
 
 <Echo />
@@ -19,8 +19,3 @@
 
 Data:
 { JSON.stringify(tutorials) }
-
-
-<form method="POST">
-    <button>Create form</button>
-</form>
