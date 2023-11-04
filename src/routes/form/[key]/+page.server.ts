@@ -1,6 +1,7 @@
 
 import { forms } from "../../../db/forms";
-import type { PageServerLoad } from './$types'
+import { responses } from "../../../db/responses";
+import type { Actions, PageServerLoad } from './$types'
 
 export const load: PageServerLoad = async function({ params }) {
 	const data = await forms.findOne({ key: params.key }, {limit: 50, projection: {
@@ -19,3 +20,22 @@ export const load: PageServerLoad = async function({ params }) {
         }
 	}
 }
+
+// POST
+export const actions = {
+	default: async ({ params, request }) => {
+		console.log("Inserting new response.");
+
+        const data = await request.formData();
+
+        const email = data.get("email") ?? "";
+        if (email instanceof File) {
+            throw "Unexpected file"
+        }
+
+        responses.insertOne({
+            key: params.key,
+            email,
+        })
+	},
+} satisfies Actions;

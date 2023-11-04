@@ -51,3 +51,10 @@ You can preview the production build with `npm run preview`.
   - POST action, creates a new list. Redirects to `/admin/[key]` upon completion
 - `/list/[key]` - Sign up form UI
 - `/admin/[key]` - Admin UI
+
+# Test
+
+URLs:
+
+- http://127.0.0.1:5173/form/rhsrs
+- http://127.0.0.1:5173/admin/xbzzlcjrhicigpxqiscp
