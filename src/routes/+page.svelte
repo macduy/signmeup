@@ -16,6 +16,9 @@
 
 <Echo />
 
+<form method="POST">
+    <button class="btn">Create</button>
+</form>
 
 Data:
 { JSON.stringify(tutorials) }
