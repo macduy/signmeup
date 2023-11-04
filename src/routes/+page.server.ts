@@ -11,8 +11,6 @@ export const load: PageServerLoad = async function() {
 		title: 1
 	}}).toArray();
 
-    console.log("Fetched ", data);
-
 	return {
 		tutorials: data
 	}
