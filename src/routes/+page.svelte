@@ -19,3 +19,8 @@
 
 Data:
 { JSON.stringify(tutorials) }
+
+
+<form method="POST">
+    <button>Create form</button>
+</form>

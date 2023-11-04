@@ -1,4 +1,4 @@
-# create-svelte
+# SignMeUp
 
 Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
 
@@ -41,3 +41,13 @@ You can preview the production build with `npm run preview`.
 
 - Env variables:
   - https://vercel.com/docs/projects/environment-variables#declare-an-environment-variable
+
+
+# Design
+
+## Routes
+
+- `/` - Home page
+  - POST action, creates a new list. Redirects to `/admin/[key]` upon completion
+- `/list/[key]` - Sign up form UI
+- `/admin/[key]` - Admin UI
