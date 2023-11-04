@@ -58,3 +58,23 @@ URLs:
 
 - http://127.0.0.1:5173/form/rhsrs
 - http://127.0.0.1:5173/admin/xbzzlcjrhicigpxqiscp
+
+
+# UI
+
+Docs:
+ - https://dev.to/brewhousedigital/adding-tailwind-and-daisy-ui-to-sveltekit-2hk5
+ - https://tailwindcss.com/docs/guides/sveltekit
+
+# Troubleshooting
+
+## PostCSS: Unexpected token 'export'
+```
+C:\Users\hai\Documents\codelite\signmeup\postcss.config.cjs:1
+export default {
+^^^^^^
+
+SyntaxError: Unexpected token 'export'
+```
+
+> Rename `postcss.config.cjs` to `postcss.config.js`
