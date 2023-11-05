@@ -1,6 +1,7 @@
 <script>
 	import Echo from "../Echo.svelte";
     import { PUBLIC_TEST } from "$env/static/public"
+	import Feature from "../Feature.svelte";
 
     console.log("OK")
     console.log(PUBLIC_TEST)
@@ -10,15 +11,26 @@
     $: ({ tutorials } = data);
 </script>
 
+<div class="container text-center">
+    <div class="mt-72" />
+    <h1 class="p-6 text-5xl">One-click Sign up lists</h1>
 
-<h1 class="p-6">Sign Me Up</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+    <div class="mt-5">Ridiculously simple sign up lists.</div>
 
-<Echo />
+    <div class="mt-5">Create a list with just 1 click.</div>
 
-<form method="POST">
-    <button class="btn">Create</button>
-</form>
+    <form method="POST" class="mt-10">
+        <button class="btn btn-accent text-lg">
+            <i class="fa-solid fa-wand-magic-sparkles" />
+            Create my list
+        </button>
+    </form>
+</div>
 
-Data:
-{ JSON.stringify(tutorials) }
+<div class="mt-32" />
+
+<div class="columns-1 md:columns-3 mt-8 gap-24">
+    <Feature heading="Free" text="It's absolutely free. If you like, please consider donating." />
+    <Feature heading="No sign-ups" text="No log in or sign up required. You are good to go from the beginning" />
+    <Feature heading="Hey" text="You really like using this tool, tell your friends about us." icon="fa-solid fa-waveform-lines" />
+</div>
