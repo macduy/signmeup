@@ -3,7 +3,7 @@
 </script>
 
 <div class="header">
-	<div class="container max-w-screen-md mx-auto py-3">
+	<div class="container max-w-screen-md mx-auto p-3">
 		<div class="flex">
 			<div class="flex-1 font-bold">
         <a href="/">

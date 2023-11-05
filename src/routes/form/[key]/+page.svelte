@@ -4,10 +4,12 @@
 	export let data: PageData;
 </script>
 
-<h1>{ data.form?.key }</h1>
+<div class="container p-3">
+	<h1>{data.form?.key}</h1>
 
-<form method="POST">
-    Email:
-    <input type="email" name="email" />
-    <button>Submit</button>
-</form>
+	<form method="POST">
+		Email:
+		<input type="email" name="email" />
+		<button>Submit</button>
+	</form>
+</div>
