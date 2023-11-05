@@ -11,7 +11,7 @@
     $: ({ tutorials } = data);
 </script>
 
-<div class="container text-center">
+<div class="text-center">
     <div class="mt-72" />
     <h1 class="p-6 text-5xl">One-click Sign up lists</h1>
 
@@ -29,7 +29,7 @@
 
 <div class="mt-32" />
 
-<div class="columns-1 md:columns-3 mt-8 gap-24">
+<div class="columns-1 md:columns-3 mt-8 gap-20 p-8">
     <Feature heading="Free" text="It's absolutely free. If you like, please consider donating." />
     <Feature heading="No sign-ups" text="No log in or sign up required. You are good to go from the beginning" />
     <Feature heading="Hey" text="You really like using this tool, tell your friends about us." icon="fa-solid fa-waveform-lines" />
