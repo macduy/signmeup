@@ -3,13 +3,17 @@
 </script>
 
 <div class="header">
-	<div class="container max-w-screen-md mx-auto p-3">
+	<div class="container max-w-screen-md mx-auto py-3">
 		<div class="flex">
-			<div class="flex-1 font-bold">SignUp1.click</div>
+			<div class="flex-1 font-bold">
+        <a href="/">
+          SignUp1.click
+        </a>
+      </div>
 
 			<div class="flex-initial flex gap-8">
-				<a>FAQ</a>
-				<a>About</a>
+				<a href="/faq">FAQ</a>
+				<a href="/about">About</a>
 			</div>
 		</div>
 	</div>

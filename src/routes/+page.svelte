@@ -1,14 +1,5 @@
 <script>
-	import Echo from "../Echo.svelte";
-    import { PUBLIC_TEST } from "$env/static/public"
 	import Feature from "../Feature.svelte";
-
-    console.log("OK")
-    console.log(PUBLIC_TEST)
-
-    export let data
-
-    $: ({ tutorials } = data);
 </script>
 
 <div class="text-center">
