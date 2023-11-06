@@ -5,6 +5,8 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import type { PageData } from './$types';
+	import BookmarkPopover from '../../../BookmarkPopover.svelte';
+	import Popover from '../../../Popover.svelte';
 
 	let host = '';
 
@@ -30,6 +32,16 @@
 						value="{host}/admin/{data.form?.adminKey}"
 					/>
 				</a>
+				<BookmarkPopover />
+
+				<Popover>
+					<div
+						class="font-semibold p-3 mb-0 border-b border-solid border-blueGray-100 rounded-t-lg"
+					>
+						Title
+					</div>
+					<div class="p-3">And here's some amazing content. It's very engaging. Right?</div>
+				</Popover>
 			</div>
 
 			<div>
