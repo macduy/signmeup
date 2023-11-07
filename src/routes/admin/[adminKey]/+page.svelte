@@ -1,64 +1,65 @@
-<script context="module">
-	export const ssr = false;
-</script>
-
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import type { PageData } from './$types';
 	import BookmarkPopover from '../../../BookmarkPopover.svelte';
 	import Popover from '../../../Popover.svelte';
 
-	let host = '';
+	let host = window.location.host;
 
 	export let data: PageData;
 
-	onMount(() => {
-		host = window.location.host;
-	});
+	$: fullAdminLink = `${host}/admin/${data.form?.adminKey}`;
+	$: formLink = `/form/${data.form?.key}`;
+	$: fullFormLink = `${host}/form/${data.form?.key}`;
 </script>
 
 <div class="container p-3">
-	<h1>Admin: {data.form?.key}</h1>
-
-	<div class="card w-96 bg-primary text-primary-content">
+	<div class="card bg-primary text-primary-content">
 		<div class="card-body">
-			<div>
-				Admin Link
-				<a href="/admin/{data.form?.adminKey}">
+			<h2 class="card-title">You've created your list! What's next?</h2>
+			<ol class="list-outside list-decimal ml-4">
+				<li class="mb-3 mt-3">
+					<b>Keep this link to yourself</b>
 					<input
 						type="text"
 						placeholder="Type here"
-						class="input w-full max-w-xs"
-						value="{host}/admin/{data.form?.adminKey}"
+						class="input w-full text-black"
+						value={fullAdminLink}
 					/>
-				</a>
-				<BookmarkPopover />
-
-				<Popover>
-					<div
-						class="font-semibold p-3 mb-0 border-b border-solid border-blueGray-100 rounded-t-lg"
-					>
-						Title
+					<ul class="list-inside list-disc">
+						<li>
+							<b>Keep it secret!</b> This link allows you to administer this list, including viewing
+							responses
+						</li>
+						<li>
+							Bookmark it or <a
+								target="_blank"
+								href="mailto:?subject=Link to administer my SignUp1.click list&body=Link: {fullAdminLink}"
+								>mail it to yourself</a
+							>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<b>Share this one</b>
+					<div class="flex gap-4">
+						<a href={formLink} target="_blank" class="flex-grow">
+							<input
+								type="text"
+								placeholder="Type here"
+								class="input w-full text-black"
+								value={fullFormLink}
+							/>
+						</a>
+						<button class="btn">Copy to clipboard</button>
 					</div>
-					<div class="p-3">And here's some amazing content. It's very engaging. Right?</div>
-				</Popover>
-			</div>
-
-			<div>
-				Link:
-				<a href="/form/{data.form?.key}" target="_blank">
-					<input
-						type="text"
-						placeholder="Type here"
-						class="input w-full max-w-xs"
-						value="{host}/form/{data.form?.key}"
-					/>
-				</a>
-			</div>
+				</li>
+			</ol>
 		</div>
 	</div>
 
 	<div>
+		Responses:
 		{JSON.stringify(data.responses)}
 	</div>
 </div>

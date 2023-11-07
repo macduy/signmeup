@@ -2,6 +2,8 @@ import type { PageServerLoad } from './$types';
 import { forms } from '../../../db/forms';
 import { responses } from '../../../db/responses';
 
+export const ssr = false;
+
 export const load: PageServerLoad = async function ({ params }) {
 	const form = await forms.findOne(
 		{ adminKey: params.adminKey },
