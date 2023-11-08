@@ -2,7 +2,12 @@
 module.exports = {
   content: ['./src/**/*.{html,js,svelte,ts}'],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        'agbalumo': ['Agbalumo', 'sanf-serif'],
+        'inter': ['Inter', 'sanf-serif']
+      }
+    },
   },
   plugins: [
     require('daisyui')

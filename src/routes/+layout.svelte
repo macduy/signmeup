@@ -6,10 +6,8 @@
 	<div class="container max-w-screen-md mx-auto p-3">
 		<div class="flex">
 			<div class="flex-1 font-bold">
-        <a href="/">
-          SignUp1.click
-        </a>
-      </div>
+				<a href="/"> SignUp1.click </a>
+			</div>
 
 			<div class="flex-initial flex gap-8">
 				<a href="/faq">FAQ</a>
@@ -24,7 +22,7 @@
 
 <style>
 	:global(body) {
-		background-image: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
+		background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
 		min-height: 100vh;
 	}
 
