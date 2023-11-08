@@ -18,7 +18,7 @@
 	}
 </script>
 
-<div class="flex gap-4">
+<div class="flex flex-col sm:flex-row gap-4">
 	<div class="flex-grow">
 		<input
 			type="text"
@@ -28,7 +28,7 @@
 			value={text}
 		/>
 	</div>
-	<button class="btn w-40" on:click={onCopy}>
+	<button class="btn sm:w-40" on:click={onCopy}>
 		{#if copied}
 			Copied!
 		{:else}
