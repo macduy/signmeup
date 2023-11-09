@@ -1,5 +1,5 @@
-import type { PageServerLoad } from './$types';
-import { forms } from '../../../db/forms';
+import type { Actions, PageServerLoad } from './$types';
+import { forms, type SignUpForm } from '../../../db/forms';
 import { responses } from '../../../db/responses';
 
 export const ssr = false;
@@ -19,6 +19,8 @@ export const load: PageServerLoad = async function ({ params }) {
 		throw 'Form not found';
 	}
 
+	console.log(form);
+
 	const responseList = await responses
 		.find(
 			{ key: form.key },
@@ -35,3 +37,21 @@ export const load: PageServerLoad = async function ({ params }) {
 		responses: responseList
 	};
 };
+
+// POST
+export const actions = {
+	default: async ({ params, request }) => {
+		console.log('Updating form.');
+
+		const data = await request.formData();
+		const title = data.get('title');
+
+		const updates: Partial<SignUpForm> = {};
+
+		if (title !== null && typeof title === 'string') {
+			updates.title = title;
+		}
+
+		forms.updateOne({ adminKey: params.adminKey }, { $set: updates });
+	}
+} satisfies Actions;

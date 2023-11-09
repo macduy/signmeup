@@ -1,6 +1,8 @@
 <script lang="ts">
 	import InputWithCopy from '../../../InputWithCopy.svelte';
+	import Form from '../../../Form.svelte';
 	import type { PageData } from './$types';
+	import { enhance } from '$app/forms';
 
 	const urlParams = new URLSearchParams(window.location.search);
 	const isFresh = urlParams.has('fresh');
@@ -56,6 +58,42 @@
 					</div>
 				</li>
 			</ol>
+		</div>
+	</div>
+
+	<h2 class="text-xl">Customize</h2>
+	<div class="flex flex-col sm:flex-row">
+		<div class="w-1/2">
+			<form method="POST" use:enhance>
+				<div class="form-control w-full max-w-xs">
+					<label class="label" for="title">
+						<span class="label-text">Title:</span>
+					</label>
+					<input
+						type="text"
+						name="title"
+						placeholder="Form title"
+						class="input input-bordered w-full"
+						value={data.form.title}
+					/>
+					<button class="btn btn-accent mt-4">Update</button>
+				</div>
+			</form>
+		</div>
+		<div class="w-1/2 relative">
+			<div class="mockup-browser border bg-base-300 shadow-lg">
+				<div class="mockup-browser-toolbar">
+					<div class="input">{fullFormLink}</div>
+				</div>
+				<div class="p3">
+					<div class="bg-base-100">
+						<div class="card-body">
+							<Form form={data.form} />
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="absolute h-full w-full" />
 		</div>
 	</div>
 
